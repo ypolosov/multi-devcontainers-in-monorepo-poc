@@ -3,7 +3,14 @@
 {
 	"name": "Devops",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"build": {
+		"context": "..",
+		"dockerfile": "./Dockerfile.devcontainer",
+		"args": {
+			// "BUILDKIT_INLINE_CACHE": "0",
+			"VERSION": "0-18"
+		}
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 
